@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <title>Viver para viajar</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Pacotes</a></li>
+                <li><a href="#">Taxas</a></li>
+                <li class="dropdown">
+                    <a href="" class="dropbtn">Contato</a>
+                    <div class="dropdown-content">
+                        <a href="">Telefone</a>
+                        <a href="">WhattsApp</a>
+                        <a href="">E-mail</a>
+
+                    </div>
+                </li>
+                <li style="float: left"><a href="#">Viver para viajar</a></li>
+            </ul>
+        </nav>
+
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="" alt="" style="width: 100%;">
+                <div class="text">Caption Text</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="" alt="" style="width: 100%;">
+                <div class="text">Caption Two</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="" alt="" style="width: 100%;">
+                <div class="text">Caption Three</div>
+            </div>
+
+            <a href="" class="prev" onclick="plusSlides(-1)"></a>
+            <a href="" class="next" onclick="plusSlides(1)">></a>
+
+        </div>
+        <br>
+
+        <div style="text-align: center;">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </header>
+    <section>
+        <h2>Section</h2>
+
+        <div class="card">
+            <img src="" alt="" style="width: 100%;">
+            <h2>Título</h2>
+            <p class="price">R$</p>
+            <p>Some text</p>
+            <p><button>Add to Cart</button></p>
+        </div>
+        <div class="card">
+            <img src="" alt="" style="width: 100%;">
+            <h2>Título</h2>
+            <p class="price">R$</p>
+            <p>Some text</p>
+            <p><button>Add to Cart</button></p>
+        </div>
+        <div class="card">
+            <img src="" alt="" style="width: 100%;">
+            <h2>Título</h2>
+            <p class="price">R$</p>
+            <p>Some Text</p>
+            <p><button>Add to Cart</button></p>
+        </div>
+    </section>
+    <section>
+        <table id="customers">
+            <h2>Título</h2>
+            <thead>
+                <tr>
+                    <th>Serviço</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>R$</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>R$</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>R$</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section>
+        <form action="">
+            <fieldset>
+                <div class="dados">
+                <h2>Dados da Viagem</h2>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="Nome"><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="Email"><br>
+                <label for="dataIda">Data de Ida:</label>
+                <input type="date" id="dataIda" name="DataIda">
+                <label for="dataVolta">Data de Volta:</label>
+                <input type="date" id="dataVolta" name="DataVolta">
+            </div>
+                <hr>
+                <h2>Quais Serviços Deseja Contratar?</h2>
+                <input type="checkbox" id="passagens" name="Passagens">
+                <label for="passagens">Compra de Passagens</label><br>
+                <input type="checkbox" id="hospedagem" name="Hospedagem">
+                <label for="hospedagem">Reserva de Hospedagem</label><br>
+                <input type="checkbox" id="veiculos" name="Veiculos">
+                <label for="veiculos">Reserva de Veículos</label><br>
+
+                <input type="button" value="Salvar">
+            </fieldset>
+        </form>
+    </section>
+
+    <footer class="rodape">
+        <p>Desenvolvido por Sabrina</p>
+    </footer>
+
+    <script>
+       let slideIndex = 1;
+       showSlides(slideIndex);
+       
+       function plusSlides(n){
+        showSlides(slideIndex += n);
+       }
+
+       function currentSlide(n){
+        showSlides(slideIndex = n);
+       }
+
+       function showSlides(n){
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+
+        let dots = document.getElementsByClassName("dot");
+        if( n > slides.length){
+            slideIndex = 1;
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+
+        for (i = 0; i < slides.length; i++){
+            slides[i].style.display = "none";
+        }
+
+        for (i = 0; i < dots.length; i++){
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+       }
+    </script>
+</body>
+
+</html>
